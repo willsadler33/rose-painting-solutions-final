@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Rose Painting Solutions | Interior Painting &amp; Room Restoration</title>
+    <meta
+      name="description"
+      content="Rose Painting Solutions paints and restores interior rooms with careful prep, clean lines and a lasting finish. Free quotes. Call (330) 614-0776, Monday–Friday 9 AM–5 PM."
+    />
+    <meta name="theme-color" content="#0C0B09" />
+    <meta name="format-detection" content="telephone=yes" />
+    <link rel="icon" href="./favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    <!-- Set this to your live domain once it's known, e.g. https://www.rosepaintingsolutions.com/ -->
+    <!-- <link rel="canonical" href="https://www.example.com/" /> -->
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Rose Painting Solutions | Interior Painting & Room Restoration" />
+    <meta property="og:description" content="Interior painting and room transformations with careful preparation and quality finishes. Free quotes — call (330) 614-0776." />
+    <!-- Social networks need an absolute URL here — change to https://your-domain/images/rose-painting/og-image.jpg -->
+    <meta property="og:image" content="./images/rose-painting/og-image.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- The owner's published content, fetched alongside the scripts (see src/content/load.js). -->
+    <link rel="preload" href="./api/content" as="fetch" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Gloock&family=Hanken+Grotesk:ital,wght@0,400..700;1,400&display=swap"
+    />
+    <link rel="preload" as="image" href="./images/rose-painting/generated/house-hero-1600.webp" imagesrcset="./images/rose-painting/generated/house-hero-1600.webp 1600w, ./images/rose-painting/generated/house-hero-2400.webp 2400w" imagesizes="100vw" media="(min-width: 768px)" fetchpriority="high" />
+    <link rel="preload" as="image" href="./images/rose-painting/generated/house-hero-mobile.webp" media="(max-width: 767px)" fetchpriority="high" />
+
+    <!-- Local business structured data. Add "address" and "areaServed" once confirmed. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "HousePainter",
+        "name": "Rose Painting Solutions",
+        "telephone": "+1-330-614-0776",
+        "description": "Interior room painting, wall refreshes, repair and restoration, surface preparation and detail work.",
+        "image": "./images/rose-painting/og-image.jpg",
+        "priceRange": "Free quotes",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "09:00",
+            "closes": "17:00"
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <noscript>
+      <p>
+        Rose Painting Solutions — interior painting and room restoration.
+        Call <a href="tel:+13306140776">(330) 614-0776</a>, Monday–Friday, 9 AM–5 PM.
+      </p>
+    </noscript>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

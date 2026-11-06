@@ -1,0 +1,10 @@
+node_modules
+dist
+.env
+.env.local
+.env.*
+!.env.example
+.DS_Store
+# Local test data for the dashboard (server/dev-server.mjs)
+.data
+dist-local

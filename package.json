@@ -1,0 +1,30 @@
+{
+  "name": "rose-painting-solutions",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Website for Rose Painting Solutions, with an owner dashboard for photos, before & after projects and website text.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "serve": "node server/dev-server.mjs dist 8888 .data",
+    "test": "node --test server/tests/api.test.mjs server/tests/netlify-function.test.mjs",
+    "smoke": "node scripts/smoke-test.mjs"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "@netlify/blobs": "^8.1.0",
+    "@netlify/functions": "^2.8.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.11",
+    "@vitejs/plugin-react": "^5.0.0",
+    "tailwindcss": "^4.1.11",
+    "vite": "^7.1.0"
+  },
+  "engines": {
+    "node": ">=20.19"
+  }
+}
