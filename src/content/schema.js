@@ -67,7 +67,7 @@ function lightness(c) {
   const [r, g, b] = [1, 3, 5].map((i) => parseInt(c.slice(i, i + 2), 16) / 255)
   return 0.2126 * r + 0.7152 * g + 0.0722 * b
 }
-function brandChip(tone, ink) {
+export function brandChip(tone, ink) {
   if (LEGACY_TONES[tone]) return LEGACY_TONES[tone]
   if (isBlue(tone)) return BRAND_BY_LIGHTNESS.find(([max]) => lightness(tone) <= max)[1]
   return [tone, isBlue(ink) ? '#151310' : ink]

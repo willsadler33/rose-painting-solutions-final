@@ -17,7 +17,7 @@ import { reasons } from '../data/content.js'
 import { portfolio } from '../data/portfolio.js'
 import { transformations } from '../data/projects.js'
 import { buildSeed } from './seed.js'
-import { sanitizeDoc } from './schema.js'
+import { brandChip, sanitizeDoc } from './schema.js'
 import { toPublic } from './public.js'
 
 const replaceArray = (arr, next) => arr.splice(0, arr.length, ...next)
@@ -30,7 +30,17 @@ export function applyContent(pub) {
     if (hours) business.hours = { ...business.hours, ...hours }
   }
   if (pub.text) Object.assign(text, pub.text)
-  if (Array.isArray(pub.services)) replaceArray(services, pub.services)
+  if (Array.isArray(pub.services)) {
+    // Saved chip colours may predate the black-and-gold rebrand; show them in brand colours.
+    const hex = (v, d) => (typeof v === 'string' && /^#[0-9a-f]{6}$/i.test(v) ? v.toLowerCase() : d)
+    replaceArray(
+      services,
+      pub.services.map((s) => {
+        const [tone, ink] = brandChip(hex(s.tone, '#151310'), hex(s.ink, '#ffffff'))
+        return { ...s, tone, ink }
+      }),
+    )
+  }
   if (Array.isArray(pub.reasons)) replaceArray(reasons, pub.reasons)
   if (Array.isArray(pub.gallery)) replaceArray(portfolio, pub.gallery)
   if (Array.isArray(pub.projects)) replaceArray(transformations, pub.projects)
